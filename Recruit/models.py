@@ -16,13 +16,14 @@ class Anunt(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
+class Angajat(models.Model):
+    user = models.OneToOneField(User, related_name="angajat_profile",  on_delete=models.CASCADE)
+
 class CV(models.Model):
     nume = models.CharField(max_length=40)
     anunturi = models.ManyToManyField(Anunt,related_name="aplicatii")
+    owner = models.ForeignKey(Angajat, related_name="cvs", on_delete=models.PROTECT, null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
-class Angajat(models.Model):
-    cvs = models.ForeignKey(CV, related_name="angajat", on_delete=models.CASCADE, null=True, blank=True)
-    user = models.OneToOneField(User, related_name="angajat_profile",  on_delete=models.CASCADE)
 
