@@ -27,3 +27,5 @@ class AnuntForm(forms.ModelForm):
         model = models.Angajat
         model =models.UserProfile
         exclude = ['user', 'friend_requests', 'friends']'''
+        model =models.UserProfile
+        exclude = ['user', 'friend_requests', 'friends']'''
