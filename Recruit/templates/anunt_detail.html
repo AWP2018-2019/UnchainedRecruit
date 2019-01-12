@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block title %}
+  {{ anunt.title }}
+{% endblock%}
+
+{% block content %}
+<div class="container">
+  <div class="p-3">
+    <div class="card">
+      <div class="card-body">
+        <h1 class="card-title">{{ anunt.descriere }}</h1>
+        <p class="card-text">Created by:
+  
+        </p>
+      </div>
+      <div class="card-footer text-muted">
+        {{ anunt.created_at }}
+      </div>
+    </div>
+
+    <div class="m-2">
+      {% if user == post.created_by %}
+        <a class="btn btn-secondary" href="{% url 'anunt_edit' anunt.id %}">Edit post</a>
+        <a class="btn btn-secondary" href="{% url 'anunt_delete' anunt.id %}">Delete post</a>
+      {% endif %}
+    </div>
+
+  </div>
+
+ 
+
+</div>
+{% endblock %}

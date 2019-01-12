@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}
+  Create post
+{% endblock%}
+
+{% block content %}
+  <form method="anunt" class="form-inline justify-content-center">
+    {% csrf_token %}
+    <div class="form-group mx-2">
+      <textarea rows="5" cols="50" class="form-control" type="text-area" 
+      name="titlu" required="" id="id_titlu" maxlength="200"></textarea>
+      <textarea rows="5" cols="50" class="form-control" type="text-area" 
+      name="descriere" required="" id="id_descriere" maxlength="200"></textarea>
+    </div>
+    <input class="btn btn-secondary" type="submit" value="Create post" />
+  </form>
+{% endblock %}
