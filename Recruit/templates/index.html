@@ -12,8 +12,13 @@
             </div>
             <div class='card-action'>
                 <a href={% url 'anunt_detail' anunt.pk %}>View</a>
-                <a href={% url 'anunt' anunt.pk %}>View</a>
-                <a href={% url 'anunt' anunt.pk %}>View</a>
+                {% if user.is_authenticated and user.angajat_profile %}
+                <a href="nimictzeapa">Aplica</a>
+                {% endif %}
+                {% if user.is_authenticated and user.recruiter_profile and anunt.created_by == user.recruiter_profile %}
+                <a href={% url 'anunt_delete' anunt.pk %}>Delete</a>
+                <a href={% url 'anunt_edit' anunt.pk %}>Edit</a>
+                {% endif %}
             </div>
             </div>
         {% endfor %}
