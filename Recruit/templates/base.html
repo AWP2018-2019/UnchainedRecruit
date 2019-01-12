@@ -7,10 +7,10 @@
         <a href={% url 'home'%} class="brand-logo">UnchainedRecruit</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
             {% if not user.is_authenticated %}
-            <li><a href="#">Login</a></li>
+            <li><a href={% url 'login_path' %}>Login</a></li>
             <li><a href={% url 'register_path' %}>Register</a></li>
             {% else %}
-            <li><a href="#">Nada</a></li>
+            <li><a href={% url 'logout_path' %}>Logout</a></li>
             {% endif %}
         </ul>
     </div>

@@ -1,0 +1,46 @@
+{% extends 'base.html'%}
+
+{% block content%}
+<div class="row">
+    <form method="post">
+        {% csrf_token %}
+        {{ form.errors }}
+        <div class='form-group center-align'>
+            <div class='row' style='padding-top: 3rem'>
+                            <div class="input-field col s6">
+                    <input name="username" type="text" class="validate">
+                    <label for="username">Username</label>
+                  </div>
+                  <div class="input-field col s6">
+                    <input name="last_name" type="text" class="validate">
+                    <label for="last_name">Last Name</label>
+                  </div>
+                  <div class="input-field col s6">
+                        <input name="email" type="text" class="validate">
+                        <label for="email">Email</label>
+                      </div>
+                      <div class="input-field col s6">
+                            <input name="password" type="text" class="validate">
+                            <label for="password">Password</label>
+                          </div>
+                  </div>
+                  <div class='row' style='padding-top: 3rem'>
+                  <label>
+                        <input name='role' type="radio" value="Recruiter" />
+                        <span> Recruiter </span>
+                    </label>
+                    <label>
+                        <input name='role' type="radio" value="Angajat"/>
+                        <span> Angajat </span>
+                    </label>
+                    </div>
+                <div class='row' style='padding-top: 3rem'>
+  <button class="btn waves-effect waves-light" type="submit" name="action" >Submit
+        <i class="material-icons right">send</i>
+      </button>
+            
+        </div>
+    </div>
+    </form>
+</div>
+{% endblock %}
