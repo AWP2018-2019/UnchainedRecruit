@@ -8,7 +8,7 @@ command-not-found==0.3
 cryptography==1.2.3
 defer==1.0.6
 dirspec==13.10
-Django==2.1.5
+Django==2.2.24
 django-extensions==2.1.4
 django-material==1.4.3
 django-shell-plus==1.1.7
